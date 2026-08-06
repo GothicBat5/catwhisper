@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOSSIER // Personal Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ambient overlays -->
+<div class="scanlines" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- side HUD nav -->
+<nav class="hud-nav" id="hud-nav" aria-label="Section navigation">
+  <div class="hud-nav__brand">SYS<span>//</span>NAV</div>
+  <ul class="hud-nav__list">
+    <li><a href="#hero" data-target="hero"><span class="hud-nav__idx">00</span><span class="hud-nav__label">BOOT</span></a></li>
+    <li><a href="#interests" data-target="interests"><span class="hud-nav__idx">01</span><span class="hud-nav__label">INTERESTS</span></a></li>
+    <li><a href="#favorites" data-target="favorites"><span class="hud-nav__idx">02</span><span class="hud-nav__label">ARCHIVE</span></a></li>
+    <li><a href="#hobbies" data-target="hobbies"><span class="hud-nav__idx">03</span><span class="hud-nav__label">ROUTINES</span></a></li>
+    <li><a href="#contact" data-target="contact"><span class="hud-nav__idx">04</span><span class="hud-nav__label">UPLINK</span></a></li>
+  </ul>
+  <div class="hud-nav__status">
+    <span class="dot"></span> ONLINE
+  </div>
+</nav>
+
+<button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+
+<main>
+
+  <!-- HERO / BOOT SEQUENCE -->
+  <section id="hero" class="section hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow"><span class="blink">&#9608;</span> INITIALIZING PERSONAL FILE...</p>
+      <h1 class="hero__title" id="hero-title" data-glitch="YOUR NAME">
+        <span class="glitch-layer" aria-hidden="true">YOUR NAME</span>
+        <span class="glitch-layer" aria-hidden="true">YOUR NAME</span>
+        <span class="glitch-base">YOUR NAME</span>
+      </h1>
+      <p class="hero__tagline" id="hero-tagline"></p>
+      <p class="hero__bio" id="hero-bio">
+        A short line about who you are. Edit this bio (and everything else on this
+        page) inside <code>data.js</code> — no need to touch the HTML.
+      </p>
+      <a href="#interests" class="hero__scroll">
+        <span>SCROLL TO ACCESS FILE</span>
+        <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1V19M7 19L1 13M7 19L13 13" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+    </div>
+    <div class="hero__meta" aria-hidden="true">
+      <span>ID // 001-USER</span>
+      <span>LOC // UNKNOWN</span>
+      <span>STATUS // ACTIVE</span>
+    </div>
+  </section>
+
+  <!-- INTERESTS -->
+  <section id="interests" class="section panel-section">
+    <header class="section__head">
+      <span class="section__idx">01</span>
+      <h2 class="section__title">Interests</h2>
+      <p class="section__sub">Signal patterns worth tracking.</p>
+    </header>
+    <div class="grid grid--interests" id="interests-grid"></div>
+  </section>
+
+  <!-- FAVORITES / ARCHIVE -->
+  <section id="favorites" class="section panel-section panel-section--alt">
+    <header class="section__head">
+      <span class="section__idx">02</span>
+      <h2 class="section__title">Archive</h2>
+      <p class="section__sub">Favorite things, catalogued by category.</p>
+    </header>
+    <div class="archive" id="favorites-archive"></div>
+  </section>
+
+  <!-- HOBBIES -->
+  <section id="hobbies" class="section panel-section">
+    <header class="section__head">
+      <span class="section__idx">03</span>
+      <h2 class="section__title">Routines</h2>
+      <p class="section__sub">What occupies the off-hours.</p>
+    </header>
+    <div class="hobbies" id="hobbies-list"></div>
+  </section>
+
+  <!-- CONTACT / SOCIAL -->
+  <section id="contact" class="section panel-section panel-section--alt panel-section--last">
+    <header class="section__head">
+      <span class="section__idx">04</span>
+      <h2 class="section__title">Uplink</h2>
+      <p class="section__sub">Open channels. Reach out on any frequency.</p>
+    </header>
+    <div class="socials" id="socials-grid"></div>
+    <footer class="site-footer">
+      <p>END OF FILE // <span id="footer-year"></span> // BUILT WITH HTML, CSS &amp; JS</p>
+    </footer>
+  </section>
+
+</main>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

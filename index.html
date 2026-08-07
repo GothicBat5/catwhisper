@@ -1,115 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DOSSIER // Personal Terminal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyVeryOwn</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ambient overlays -->
-<div class="scanlines" aria-hidden="true"></div>
-<div class="grain" aria-hidden="true"></div>
-<div class="vignette" aria-hidden="true"></div>
-
-<!-- side HUD nav -->
-<nav class="hud-nav" id="hud-nav" aria-label="Section navigation">
-  <div class="hud-nav__brand">SYS<span>//</span>NAV</div>
-  <ul class="hud-nav__list">
-    <li><a href="#hero" data-target="hero"><span class="hud-nav__idx">00</span><span class="hud-nav__label">BOOT</span></a></li>
-    <li><a href="#interests" data-target="interests"><span class="hud-nav__idx">01</span><span class="hud-nav__label">INTERESTS</span></a></li>
-    <li><a href="#favorites" data-target="favorites"><span class="hud-nav__idx">02</span><span class="hud-nav__label">ARCHIVE</span></a></li>
-    <li><a href="#hobbies" data-target="hobbies"><span class="hud-nav__idx">03</span><span class="hud-nav__label">ROUTINES</span></a></li>
-    <li><a href="#contact" data-target="contact"><span class="hud-nav__idx">04</span><span class="hud-nav__label">UPLINK</span></a></li>
-  </ul>
-  <div class="hud-nav__status">
-    <span class="dot"></span> ONLINE
-  </div>
-</nav>
-
-<button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
-
-<main>
-
-  <!-- HERO / BOOT SEQUENCE -->
-  <section id="hero" class="section hero">
-    <div class="hero__grid" aria-hidden="true"></div>
-    <div class="hero__content">
-      <p class="hero__eyebrow"><span class="blink">&#9608;</span> INITIALIZING PERSONAL FILE...</p>
-      <h1 class="hero__title" id="hero-title" data-glitch="YOUR NAME">
-        <span class="glitch-layer" aria-hidden="true">YOUR NAME</span>
-        <span class="glitch-layer" aria-hidden="true">YOUR NAME</span>
-        <span class="glitch-base">YOUR NAME</span>
-      </h1>
-      <p class="hero__tagline" id="hero-tagline"></p>
-      <p class="hero__bio" id="hero-bio">
-        A short line about who you are. Edit this bio (and everything else on this
-        page) inside <code>data.js</code> — no need to touch the HTML.
-      </p>
-      <a href="#interests" class="hero__scroll">
-        <span>SCROLL TO ACCESS FILE</span>
-        <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1V19M7 19L1 13M7 19L13 13" stroke="currentColor" stroke-width="1.5"/></svg>
-      </a>
+  <header id="hero">
+    <div class="hero-img" style="background-image: url('images/cover.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">Nature · Laugh · Live</p>
+      <h1>Nathan Ejera</h1>
+      <p class="tagline">My website is currently in Alpha phased.</p>
+      <a href="#about" class="scroll-cue">Scroll</a>
     </div>
-    <div class="hero__meta" aria-hidden="true">
-      <span>ID // 001-USER</span>
-      <span>LOC // UNKNOWN</span>
-      <span>STATUS // ACTIVE</span>
+  </header>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-brand">My Love - Shin Ryujin</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#favorites">Favorites</a></li>
+        <li><a href="#links">Links</a></li>
+      </ul>
     </div>
-  </section>
+  </nav>
 
-  <!-- INTERESTS -->
-  <section id="interests" class="section panel-section">
-    <header class="section__head">
-      <span class="section__idx">01</span>
-      <h2 class="section__title">Interests</h2>
-      <p class="section__sub">Signal patterns worth tracking.</p>
-    </header>
-    <div class="grid grid--interests" id="interests-grid"></div>
-  </section>
+  <main>
 
-  <!-- FAVORITES / ARCHIVE -->
-  <section id="favorites" class="section panel-section panel-section--alt">
-    <header class="section__head">
-      <span class="section__idx">02</span>
-      <h2 class="section__title">Archive</h2>
-      <p class="section__sub">Favorite things, catalogued by category.</p>
-    </header>
-    <div class="archive" id="favorites-archive"></div>
-  </section>
+    <section id="about" class="section">
+      <div class="section-inner">
+        <span class="section-label">01 — About</span>
+        <h2>A short introduction</h2>
+        <div class="about-grid">
+          <img src="images/profile.jpg" alt="Profile photo" class="profile-photo">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <!-- HOBBIES -->
-  <section id="hobbies" class="section panel-section">
-    <header class="section__head">
-      <span class="section__idx">03</span>
-      <h2 class="section__title">Routines</h2>
-      <p class="section__sub">What occupies the off-hours.</p>
-    </header>
-    <div class="hobbies" id="hobbies-list"></div>
-  </section>
 
-  <!-- CONTACT / SOCIAL -->
-  <section id="contact" class="section panel-section panel-section--alt panel-section--last">
-    <header class="section__head">
-      <span class="section__idx">04</span>
-      <h2 class="section__title">Uplink</h2>
-      <p class="section__sub">Open channels. Reach out on any frequency.</p>
-    </header>
-    <div class="socials" id="socials-grid"></div>
-    <footer class="site-footer">
-      <p>END OF FILE // <span id="footer-year"></span> // BUILT WITH HTML, CSS &amp; JS</p>
-    </footer>
-  </section>
+    <section id="interests" class="section alt">
+      <div class="section-inner">
+        <span class="section-label">02 — Interests</span>
+        <h2>Things I spend time on</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Lorem Ipsum</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+          </div>
+          <div class="card">
+            <h3>Dolor Sit</h3>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.</p>
+          </div>
+          <div class="card">
+            <h3>Amet Consectetur</h3>
+            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <section id="favorites" class="section">
+      <div class="section-inner">
+        <span class="section-label">03 — Favorites</span>
+        <h2>Currently on rotation</h2>
+        <div class="gallery">
+          <figure>
+            <img src="images/sample.png" alt="Favorite item one">
+            <figcaption>Lorem ipsum dolor</figcaption>
+          </figure>
+          <figure>
+            <img src="images/sample.png" alt="Favorite item two">
+            <figcaption>Consectetur adipiscing</figcaption>
+          </figure>
+          <figure>
+            <img src="images/sample.png" alt="Favorite item three">
+            <figcaption>Sed do eiusmod</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-<script src="data.js"></script>
-<script src="script.js"></script>
+    <section id="links" class="section alt">
+      <div class="section-inner">
+        <span class="section-label">04 — Links</span>
+        <h2>Find me elsewhere</h2>
+        <ul class="icon-links">
+          <li>
+            <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+            </a>
+            <span>Facebook</span>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/jetbrains_nathan/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45.53c.64-.25 1.37-.42 2.43-.47C8.94.01 9.28 0 12 0zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.25A3.25 3.25 0 1 1 12 8.75a3.25 3.25 0 0 1 0 6.5zM17.5 4.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z"/></svg>
+            </a>
+            <span>Instagram</span>
+          </li>
+          <li>
+            <a href="https://discord.com/nathanramos9" target="_blank" rel="noopener" aria-label="Discord">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 5.37a17.9 17.9 0 0 0-4.4-1.37c-.19.35-.4.81-.55 1.18a16.6 16.6 0 0 0-4.94 0 8.7 8.7 0 0 0-.56-1.18 17.8 17.8 0 0 0-4.4 1.37C2.9 8.86 2.24 12.24 2.57 15.58a18 18 0 0 0 5.5 2.8c.44-.6.84-1.25 1.18-1.93-.65-.25-1.27-.55-1.86-.92.16-.11.31-.23.46-.35a12.8 12.8 0 0 0 10.3 0c.15.12.3.24.46.35-.59.37-1.21.67-1.86.92.34.68.74 1.33 1.18 1.93a18 18 0 0 0 5.5-2.8c.4-3.87-.62-7.21-2.61-10.21zM9.68 13.6c-.87 0-1.58-.8-1.58-1.79 0-.98.69-1.79 1.58-1.79.9 0 1.6.81 1.58 1.79 0 .98-.69 1.79-1.58 1.79zm4.65 0c-.87 0-1.58-.8-1.58-1.79 0-.98.69-1.79 1.58-1.79.9 0 1.6.81 1.58 1.79 0 .98-.68 1.79-1.58 1.79z"/></svg>
+            </a>
+            <span>Discord</span>
+          </li>
+          <li>
+            <a href="mailto:nrejera.ccsjdm@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></svg>
+            </a>
+            <span>Email</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jane Doe. Lorem ipsum dolor sit amet.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

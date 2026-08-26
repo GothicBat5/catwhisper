@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="fv/bear.jpg">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Music</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #022e50;
+            color: #04ffcc;
+
+            font-family: Arial, sans-serif;
+
+            padding: 50px 20px;
+        }
+
+        .music-page {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Header */
+
+        .page-header {
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #999;
+            font-size: 16px;
+        }
+
+        /* Navigation */
+
+        .back {
+            display: inline-block;
+
+            margin-bottom: 30px;
+
+            color: #0adeff;
+            text-decoration: none;
+
+            transition: 0.2s;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        /* Music cards */
+
+        .music-card {
+            display: flex;
+            align-items: center;
+
+            gap: 25px;
+
+            background: #25009b;
+
+            border: 1.1px solid #0099b7;
+
+            border-radius: 25px;
+
+            padding: 20px;
+
+            margin-bottom: 20px;
+
+            transition:
+                transform 0.2s,
+                background 0.2s,
+                border-color 0.2s;
+        }
+
+        .music-card:hover {
+            transform: translateY(-3px);
+
+            background: #222;
+
+            border-color: #444;
+        }
+
+        /* Image */
+
+        .music-image {
+            width: 180px;
+            height: 180px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            flex-shrink: 0;
+
+            transition: transform 0.2s;
+        }
+
+        .music-image:hover {
+            transform: scale(1.03);
+        }
+
+        /* Text */
+
+        .music-info {
+            padding-right: 15px;
+        }
+
+        .music-title {
+            display: inline-block;
+
+            color: rgb(203, 233, 239);
+
+            font-size: 31px;
+
+            text-decoration: none;
+
+            margin-bottom: 10px;
+        }
+
+        .music-title:hover {
+            text-decoration: underline;
+        }
+
+        .music-info p {
+            color: #aaa;
+
+            line-height: 1.6;
+
+            margin-bottom: 15px;
+        }
+
+        .music-link {
+            color: #888;
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+        .music-link:hover {
+            color: white;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            .music-card {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .music-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .music-title {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="music-page">
+
+        <a href="index.html" class="back">
+            ← Back to Home
+        </a>
+
+        <header class="page-header">
+
+            <h1>My Music</h1>
+
+            <p>
+                I listen to wide ranges of music genre 
+            </p>
+
+        </header>
+
+
+        <!-- K-POP -->
+
+        <article class="music-card">
+
+            <a href="https://en.wikipedia.org/wiki/K-pop"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <img src="images/wonhee.jpg"
+                     alt="Wonhee"
+                     class="music-image">
+
+            </a>
+
+            <div class="music-info">
+
+                <a href="https://en.wikipedia.org/wiki/K-pop"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-title">
+
+                    K-POP
+
+                </a>
+
+                <p>
+                    Kpop is a vibrant music genre born in South Korea that blends catchy melodies, sharp choreography, 
+                    and striking visuals. 
+                    It often mixes elements of pop, hip-hop, R&B, and electronic music, 
+                    creating a polished sound that appeals worldwide. 
+                    Beyond the music, K-Pop is known for its dedicated fan culture and the artistry of its performers.
+                </p>
+
+                <a href="https://en.wikipedia.org/wiki/Illit"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-link">
+
+                    Wonhee from Illit
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- LOFI -->
+
+        <article class="music-card">
+
+            <a href="https://en.wikipedia.org/wiki/Lo-fi_music"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <img src="images/joji.jpg"
+                     alt="Joji"
+                     class="music-image">
+
+            </a>
+
+            <div class="music-info">
+
+                <a href="https://en.wikipedia.org/wiki/Lo-fi_music"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-title">
+
+                    LOFI
+
+                </a>
+
+                <p>
+                    Low Fidelity or Lofi is a genre that leans into a mellow, imperfect sound. 
+                    Instead of chasing studio polish, it highlights warm tones, soft crackles, and laid-back beats. 
+                    In the style popularized by artists like Joji, Lofi often carries a moody, 
+                    introspective edge music that feels like a night ride through the city, 
+                    blending hazy melodies with subtle hip-hop or R&B influences. 
+                    It’s the soundtrack for late hours, quiet thoughts, and drifting emotions.
+                </p>
+
+                <a href="https://en.wikipedia.org/wiki/Joji_(musician)c"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-link">
+
+                    Shot of Joji 
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="music-card">
+
+            <a href="https://en.wikipedia.org/wiki/Music_of_the_Philippines#Original_Pilipino_Music_(OPM)"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <img src="images/fred.jpg"
+                     alt="Fred"
+                     class="music-image">
+
+            </a>
+
+            <div class="music-info">
+
+                <a href="https://en.wikipedia.org/wiki/Music_of_the_Philippines#Original_Pilipino_Music_(OPM)"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-title">
+
+                    OPM
+
+                </a>
+
+                <p>
+                    OPM (Original Pinoy Music) refers to music created by Filipino artists, spanning a wide range of styles from heartfelt ballads to modern pop and rock. 
+                    It carries the distinct voice of Filipino culture, often weaving in themes of love, resilience, and everyday life. 
+                    OPM has become a proud symbol of national identity, resonating both locally and with Filipinos abroad.
+                </p>
+
+                <a href="https://en.wikipedia.org/wiki/Freddie_Aguilar"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-link">
+
+                    Image of OPM Icon Freddie Aguilar
+
+                </a>
+
+            </div>
+
+        </article>
+
+                <article class="music-card">
+
+            <a href="https://en.wikipedia.org/wiki/Tropical_house"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <img src="images/jonas.jpg"
+                     alt="Jonas"
+                     class="music-image">
+
+            </a>
+
+            <div class="music-info">
+
+                <a href="https://en.wikipedia.org/wiki/Tropical_house"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-title">
+
+                    Tropical House
+
+                </a>
+
+                <p>
+                    Tropical House is a subgenre of electronic dance music that radiates a breezy, summer vibe. 
+                    Characterized by smooth beats, gentle synths, and tropical-inspired sounds like steel drums or pan flutes, 
+                    it evokes the feeling of being on a beach getaway. 
+                    The mood is light, uplifting, and easygoing music designed to transport listeners to a carefree paradise.
+                </p>
+
+                <a href="https://en.wikipedia.org/wiki/Jonas_Blue"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-link">
+
+                    Jonas Blues
+
+                </a>
+
+            </div>
+
+        </article>
+
+    </main>
+
+</body>
+
+</html>

@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MyVeryOwn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="spice.css"> <!-- extra styling, loads after style.css -->
   <link rel="icon" type="image/png" href="fv/bear.jpg">
 </head>
 <body>
@@ -14,9 +18,13 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="eyebrow">Nature · Laugh · Live</p>
-      <h1>Nathan Ejera</h1>
-      <p class="tagline">My website is currently in Alpha phased.</p>
-      <a href="music.html" class="scroll-cue">My Music</a>
+      <h1>Do I Need?</h1>
+      <p class="tagline">Nathan Ejera.</p>
+      <!-- Music entry: keep class="scroll-cue music-cue" -->
+      <a href="music.html" class="scroll-cue music-cue" aria-label="Open My Music">
+        <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>My Music</span>
+      </a>
     </div>
   </header>
 
@@ -45,12 +53,12 @@
         <div class="about-grid">
           <img src="images/cat.png" alt="Profile photo" class="profile-photo">
           <p>
-          We inhabit a naturalistic world, one governed by the immutable laws of physics. 
-          Every phenomenon, from the motion of celestial bodies to the smallest vibration of a particle, 
-          unfolds within this framework of order and causality. To acknowledge this is not merely to accept 
+          We inhabit a naturalistic world, one governed by the immutable laws of physics.
+          Every phenomenon, from the motion of celestial bodies to the smallest vibration of a particle,
+          unfolds within this framework of order and causality. To acknowledge this is not merely to accept
           the authority of science, but to recognize the profound coherence of existence itself.
-          I consider myself, in this respect, a natural philosopher, an individual compelled to reflect 
-          upon the mysteries of life and the nature of reality. 
+          I consider myself, in this respect, a natural philosopher, an individual compelled to reflect
+          upon the mysteries of life and the nature of reality.
           Philosophy, at its most vital, is not a retreat into abstraction but a disciplined wonder of reality,
           a search for explanations that illuminate the hidden structure of things,
           give rise to such extraordinary complexity.
@@ -63,25 +71,86 @@
     <section id="interests" class="section alt">
       <div class="section-inner">
         <span class="section-label">Interests to Explore</span>
-        <h2>Fields to Discuss</h2>
+        <h2>INTEREST</h2>
         <div class="card-grid">
-          <div class="card">
-            <h3>Zoology</h3>
-            <p>I've been facinated about the animal kingdom since I was a kid.
-              Animals comes in a different form, from our pet cats and dogs 
-              to almost alien like beings. It's facinating to study their overall environment
-            </p>
-          </div>
-          <div class="card">
-            <h3>Sociology</h3>
-            <p>More than just a "study of society" this is more of a study of how human
-              system function with many types of beliefs and ideology.</p>
-          </div>
-          <div class="card">
-            <h3>Multimedia Technology</h3>
-            <p>The Art and Science of Communication and Problem Solving as well
-              as being part of the Entertainment Industry.</p>
-          </div>
+
+          <!--To add a field: copy one <article class="card"> block, change the link, image and text. -->
+
+          <article class="card">
+            <a href="https://en.wikipedia.org/wiki/Zoology" target="_blank" rel="noopener noreferrer">
+              <div class="card-media">
+                <img src="images/floor_two/phylogeny.png" alt="Zoology">
+              </div>
+              <div class="card-body">
+                <h3>Zoology</h3>
+                <p>I've been fascinated by the animal kingdom since I was a kid.
+                  Animals come in many forms, from our pet cats and dogs
+                  to almost alien-like beings. It's fascinating to study their overall environment.
+                </p>
+                <span class="card-more">Explore Zoology</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="card">
+            <a href="https://en.wikipedia.org/wiki/Sociology" target="_blank" rel="noopener noreferrer">
+              <div class="card-media">
+                <img src="images/floor_two/socio.png" alt="Sociology">
+              </div>
+              <div class="card-body">
+                <h3>Sociology</h3>
+                <p>More than just a "study of society" this is more of a study of how human
+                  systems function with many types of beliefs and ideology.</p>
+                <span class="card-more">Explore Sociology</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="card">
+            <a href="https://en.wikipedia.org/wiki/Multimedia" target="_blank" rel="noopener noreferrer">
+              <div class="card-media">
+                <img src="images/floor_two/multimedia.jpeg" alt="MultimediaTech">
+              </div>
+              <div class="card-body">
+                <h3>Multimedia Technology</h3>
+                <p>The Art and Science of Communication and Problem Solving as well
+                  as being part of the Entertainment Industry.</p>
+                <span class="card-more">Explore Multimedia</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="card">
+            <a href="https://www.panmacmillan.com/blogs/science-fiction-and-fantasy/science-fiction-subgenres" target="_blank" rel="noopener noreferrer">
+              <div class="card-media">
+                <img src="images/floor_two/scifi.png" alt="Scifi">
+              </div>
+              <div class="card-body">
+                <h3>Science Fiction</h3>
+                <p>The genre of speculative fiction 
+                  that imagines advanced and futuristic changes in technology, scientific knowledge, or biological systems
+                  features imaginative and futuristic concepts that are often rooted in scientific principles, technology, and possibilities. 
+                  These stories delve into "what if" issues by projecting them onto future or alternate settings.</p>
+                <span class="card-more">Explore</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="card">
+            <a href="https://www.imdb.com/interest/in0000114/" target="_blank" rel="noopener noreferrer">
+              <div class="card-media">
+                <img src="images/floor_two/hrd.png" alt="PsyHrr">
+              </div>
+              <div class="card-body">
+                <h3>Psychological Horror</h3>
+                <p> Psychological Horror is a subgenre of horror that scares audiences through internal struggles, 
+                  mental instability, and emotional dread 
+                  rather than relying on physical monsters, gore, or jump scares.</p>
+                <span class="card-more">Explore Psychological Horror</span>
+              </div>
+            </a>
+          </article>
+
         </div>
       </div>
     </section>
@@ -93,30 +162,30 @@
         <div class="gallery">
           <figure>
             <a href="https://en.wikipedia.org/wiki/Max_Weber"
-               target = "_blank"
-               rel="nooopener noreferrer">
+               target="_blank"
+               rel="noopener noreferrer">
                <img src="images/maxx.jpg" alt="Favorite item one">
               <figcaption>Max Weber - German sociologist and political philosopher</figcaption>
             </a>
- 
+
           </figure>
 
           <figure>
             <a href="https://en.wikipedia.org/wiki/Aristotle"
-            target = "_blank"
-            rel="nooopener noreferrer">
+            target="_blank"
+            rel="noopener noreferrer">
             <img src="images/arii.jpg" alt="Favorite item two">
             <figcaption>Aristotle - Greek philosopher and polymath</figcaption>
             </a>
- 
+
           </figure>
           <figure>
             <a href="https://en.wikipedia.org/wiki/Carl_Linnaeus"
             target="_blank"
-            rel = "nooopener noreferrer">
+            rel="noopener noreferrer">
             <img src="images/carlv.jpg" alt="Favorite item three">
             <figcaption>Carl Linnaeus - Swedish biologist and physician</figcaption>
-            </a>     
+            </a>
           </figure>
         </div>
       </div>
@@ -172,7 +241,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Nathan Ramos Ejera. My Digital Space.</p>
+    <p>&copy; 2026 Nathan Ramoz. My Digital Space.</p>
   </footer>
 
   <script src="script.js"></script>

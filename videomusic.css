@@ -1,0 +1,175 @@
+/* videomusic.css :3 ^ _ ^
+   Scroll-away hero video + wavy title + layered wave edge for the music page. */
+
+:root {
+    --navy: #022e50;
+    --blue: #0adeff;
+    --violet: #7c5cff;
+    --magenta: #ff2bd6;
+}
+
+/*video layer */
+.hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    will-change: opacity, transform;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    padding: 0 20px 80px;
+    background:
+        radial-gradient(ellipse at 50% 45%, rgba(2, 46, 80, 0.1), rgba(2, 46, 80, 0.75) 100%),
+        linear-gradient(180deg, rgba(10, 222, 255, 0.18), rgba(255, 43, 214, 0.24));
+}
+
+/* Gradient title that flows */
+.hero-title {
+    font-family: 'Syne', 'Arial Black', Arial, sans-serif;
+    font-weight: 800;
+    font-size: clamp(44px, 9vw, 120px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    background: linear-gradient(100deg, #0adeff 0%, #4d7cff 30%, #ff2bd6 60%, #0adeff 100%);
+    background-size: 200% 100%;
+    background-repeat: repeat-x;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 4px 28px rgba(10, 222, 255, 0.4));
+    transform: translateY(calc(var(--p, 0) * -50px));
+    animation: title-flow 9s linear infinite;
+}
+
+/* Wavy line under the title */
+.hero-wave {
+    width: min(440px, 72vw);
+    height: 28px;
+    overflow: hidden;
+    transform: translateY(calc(var(--p, 0) * -50px));
+}
+
+.hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-wave path {
+    fill: none;
+    stroke-linecap: round;
+}
+
+.hero-wave .wave-a {
+    stroke: url(#titleGrad);
+    stroke-width: 3.5;
+    animation: line-drift 3.2s linear infinite;
+}
+
+.hero-wave .wave-b {
+    stroke: url(#titleGrad);
+    stroke-width: 1.5;
+    opacity: 0.55;
+    animation: line-drift 5s linear infinite reverse;
+}
+
+/* Content that slides up over the video*/
+.content-wrap {
+    position: relative;
+    z-index: 1;
+    margin-top: 100vh;
+    background: var(--navy);
+    padding: 20px 20px 90px;
+    min-height: 100vh;
+}
+
+/* Layered, curved top edge */
+.wave-edge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(100% - 1px);
+    height: clamp(80px, 13vw, 170px);
+    pointer-events: none;
+}
+
+.wave-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.wave-layer svg {
+    display: block;
+    width: 200%;
+    height: 100%;
+    animation: wave-drift 20s linear infinite;
+}
+
+/* Back layers lag behind the scroll a little, which gives depth */
+.wave-layer.back {
+    transform: translateY(calc(var(--p, 0) * 60px));
+}
+
+.wave-layer.mid {
+    transform: translateY(calc(var(--p, 0) * 30px));
+}
+
+.wave-layer.back svg {
+    animation-duration: 34s;
+    animation-direction: reverse;
+}
+
+.wave-layer.mid svg {
+    animation-duration: 24s;
+}
+
+.wave-layer.front svg {
+    animation-duration: 16s;
+}
+
+.wave-layer .fill-back { fill: rgba(255, 43, 214, 0.38); }
+.wave-layer .fill-mid { fill: url(#midGrad); }
+.wave-layer .fill-front { fill: var(--navy); }
+
+/* animations */
+@keyframes title-flow {
+    to { background-position: 200% 0; }
+}
+
+@keyframes line-drift {
+    to { transform: translateX(-160px); }
+}
+
+@keyframes wave-drift {
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-title,
+    .hero-wave path,
+    .wave-layer svg {
+        animation: none;
+    }
+}

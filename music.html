@@ -3,9 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="videomusic.css">
     <link rel="icon" type="image/png" href="fv/bear.jpg">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
     <title>My Music</title>
 
@@ -19,11 +24,8 @@
 
         body {
             background: #022e50;
-            color: #04ffcc;
-
-            font-family: Arial, sans-serif;
-
-            padding: 50px 20px;
+            color: #cfe9ff;
+            font-family: 'DM Sans', Arial, sans-serif;
         }
 
         .music-page {
@@ -38,13 +40,22 @@
         }
 
         .page-header h1 {
-            font-size: 42px;
+            font-family: 'Syne', Arial, sans-serif;
+            font-weight: 800;
+            font-size: 46px;
             margin-bottom: 10px;
+
+            background: linear-gradient(100deg, #0adeff, #ff2bd6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            width: fit-content;
         }
 
         .page-header p {
-            color: #999;
-            font-size: 16px;
+            color: #9fb8d8;
+            font-size: 17px;
         }
 
         /* Navigation */
@@ -57,43 +68,48 @@
             color: #0adeff;
             text-decoration: none;
 
-            transition: 0.2s;
+            transition: color 0.2s;
         }
 
-        .back:hover {
-            color: white;
+        .back:hover,
+        .back:focus-visible {
+            color: #ff7de9;
         }
 
-        /* Music cards */
+        /* Music cards
+           Add a new <article class="music-card"> and it picks up the style
+           automatically. Every other card flips image side. */
 
         .music-card {
             display: flex;
             align-items: center;
 
-            gap: 25px;
+            gap: 28px;
 
-            background: #25009b;
+            /* gradient border: blue to magenta */
+            border: 1.5px solid transparent;
+            border-radius: 32px 32px 32px 90px;
+            background:
+                linear-gradient(145deg, #12127a, #1d0a5c) padding-box,
+                linear-gradient(120deg, #0adeff, #7c5cff 55%, #ff2bd6) border-box;
 
-            border: 1.1px solid #0099b7;
+            padding: 22px;
 
-            border-radius: 25px;
-
-            padding: 20px;
-
-            margin-bottom: 20px;
+            margin-bottom: 26px;
 
             transition:
-                transform 0.2s,
-                background 0.2s,
-                border-color 0.2s;
+                transform 0.25s,
+                box-shadow 0.25s;
+        }
+
+        .music-card:nth-of-type(even) {
+            flex-direction: row-reverse;
+            border-radius: 32px 32px 90px 32px;
         }
 
         .music-card:hover {
-            transform: translateY(-3px);
-
-            background: #222;
-
-            border-color: #444;
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(124, 92, 255, 0.35);
         }
 
         /* Image */
@@ -104,15 +120,19 @@
 
             object-fit: cover;
 
-            border-radius: 20px;
+            /* soft organic blob instead of a plain square */
+            border-radius: 62% 38% 54% 46% / 48% 56% 44% 52%;
 
             flex-shrink: 0;
 
-            transition: transform 0.2s;
+            display: block;
+
+            transition: transform 0.25s, border-radius 0.4s;
         }
 
         .music-image:hover {
-            transform: scale(1.03);
+            transform: scale(1.04) rotate(-2deg);
+            border-radius: 45% 55% 40% 60% / 55% 45% 55% 45%;
         }
 
         /* Text */
@@ -124,7 +144,10 @@
         .music-title {
             display: inline-block;
 
-            color: rgb(203, 233, 239);
+            font-family: 'Syne', Arial, sans-serif;
+            font-weight: 700;
+
+            color: #e6f6ff;
 
             font-size: 31px;
 
@@ -135,18 +158,20 @@
 
         .music-title:hover {
             text-decoration: underline;
+            text-decoration-color: #ff2bd6;
+            text-underline-offset: 6px;
         }
 
         .music-info p {
-            color: #aaa;
+            color: #b9c9e8;
 
-            line-height: 1.6;
+            line-height: 1.65;
 
             margin-bottom: 15px;
         }
 
         .music-link {
-            color: #888;
+            color: #0adeff;
 
             text-decoration: none;
 
@@ -154,25 +179,37 @@
         }
 
         .music-link:hover {
-            color: white;
+            color: #ff7de9;
+        }
+
+        a:focus-visible {
+            outline: 2px solid #ff2bd6;
+            outline-offset: 4px;
         }
 
         /* Mobile */
 
         @media (max-width: 600px) {
 
-            .music-card {
+            .music-card,
+            .music-card:nth-of-type(even) {
                 flex-direction: column;
                 align-items: stretch;
+                border-radius: 28px 28px 28px 60px;
             }
 
             .music-image {
                 width: 100%;
                 height: 250px;
+                border-radius: 28px 28px 28px 70px;
             }
 
             .music-title {
                 font-size: 24px;
+            }
+
+            .music-info {
+                padding-right: 0;
             }
 
         }
@@ -180,7 +217,62 @@
     </style>
 </head>
 
-<body>
+<body> 
+    <!-- This indside of the body, content to put-->
+    <section class="hero" id="hero">
+    <video class="hero-video" src="clip/cat.mp4" autoplay muted loop playsinline></video>
+        <div class="hero-overlay">
+            <h2 class="hero-title">Music to Live</h2>
+
+            <!-- wavy line under the title -->
+            <div class="hero-wave" aria-hidden="true">
+                <svg viewBox="0 0 320 24" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <linearGradient id="titleGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="480" y2="0">
+                            <stop offset="0" stop-color="#0adeff"/>
+                            <stop offset="0.1667" stop-color="#ff2bd6"/>
+                            <stop offset="0.3333" stop-color="#0adeff"/>
+                            <stop offset="0.5" stop-color="#ff2bd6"/>
+                            <stop offset="0.6667" stop-color="#0adeff"/>
+                            <stop offset="0.8333" stop-color="#ff2bd6"/>
+                            <stop offset="1" stop-color="#0adeff"/>
+                        </linearGradient>
+                    </defs>
+                    <path class="wave-b" d="M0 12 q20 14 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+                    <path class="wave-a" d="M0 12 q20 -14 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <div class="content-wrap">
+
+        <!-- Curved, layered top edge that rises over the video -->
+        <div class="wave-edge" aria-hidden="true">
+            <div class="wave-layer back">
+                <svg viewBox="0 0 2400 140" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="midGrad" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0" stop-color="#0adeff" stop-opacity="0.45"/>
+                            <stop offset="0.25" stop-color="#7c5cff" stop-opacity="0.5"/>
+                            <stop offset="0.5" stop-color="#0adeff" stop-opacity="0.45"/>
+                            <stop offset="0.75" stop-color="#7c5cff" stop-opacity="0.5"/>
+                            <stop offset="1" stop-color="#0adeff" stop-opacity="0.45"/>
+                        </linearGradient>
+                    </defs>
+                    <path class="fill-back" d="M0 60 C200 0 400 0 600 60 S1000 120 1200 60 C1400 0 1600 0 1800 60 S2200 120 2400 60 V140 H0 Z"/>
+                </svg>
+            </div>
+            <div class="wave-layer mid">
+                <svg viewBox="0 0 2400 140" preserveAspectRatio="none">
+                    <path class="fill-mid" d="M0 80 C150 30 450 30 600 80 S1050 130 1200 80 C1350 30 1650 30 1800 80 S2250 130 2400 80 V140 H0 Z"/>
+                </svg>
+            </div>
+            <div class="wave-layer front">
+                <svg viewBox="0 0 2400 140" preserveAspectRatio="none">
+                    <path class="fill-front" d="M0 105 C200 70 400 70 600 105 S1000 140 1200 105 C1400 70 1600 70 1800 105 S2200 140 2400 105 V140 H0 Z"/>
+                </svg>
+            </div>
+        </div>
 
     <main class="music-page">
 
@@ -198,7 +290,6 @@
 
         </header>
 
-
         <!-- K-POP -->
 
         <article class="music-card">
@@ -215,7 +306,7 @@
 
             <div class="music-info">
 
-                <a href="https://en.wikipedia.org/wiki/K-pop"
+                <a href="https://artlist.io/blog/k-pop-music/"
                    target="_blank"
                    rel="noopener noreferrer"
                    class="music-title">
@@ -294,6 +385,8 @@
         </article>
 
 
+        <!-- OPM -->
+
         <article class="music-card">
 
             <a href="https://en.wikipedia.org/wiki/Music_of_the_Philippines#Original_Pilipino_Music_(OPM)"
@@ -336,7 +429,10 @@
 
         </article>
 
-                <article class="music-card">
+
+        <!-- TROPICAL HOUSE -->
+
+        <article class="music-card">
 
             <a href="https://en.wikipedia.org/wiki/Tropical_house"
                target="_blank"
@@ -350,7 +446,7 @@
 
             <div class="music-info">
 
-                <a href="https://en.wikipedia.org/wiki/Tropical_house"
+                <a href="https://rateyourmusic.com/genre/tropical-house/"
                    target="_blank"
                    rel="noopener noreferrer"
                    class="music-title">
@@ -379,7 +475,120 @@
 
         </article>
 
+       <article class="music-card">
+
+            <a href="https://en.wikipedia.org/wiki/Cigarettes_After_Sex"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <img src="images/cas.png"
+                     alt="CAS"
+                     class="music-image">
+
+            </a>
+
+            <div class="music-info">
+
+                <a href="https://rateyourmusic.com/genre/dream-pop/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-title">
+
+                    Dream Pop
+
+                </a>
+
+                <p>
+                    Dream pop is a subgenre of alternative rock and neo-psychedelia that merges catchy pop melodies 
+                    with a heavy focus on atmospheric texture and ambient soundscapes. 
+                    Similarly to shoegaze, vocals are a distinguishing element of dream pop and are often mainly viewed as an instrumental texture, 
+                    with more importance being placed on melody and timbre, rather than lyricism. 
+                    It is not uncommon for dream pop groups to have multiple vocalists.
+                </p>
+
+                <a href="https://en.wikipedia.org/wiki/Cigarettes_After_Sex"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-link">
+
+                    Greg Gonzalez of Cigarettes After Sex 
+
+                </a>
+
+            </div>
+
+        </article>
+
+       <article class="music-card">
+
+            <a href="https://www.startle.io/blog/music-genres-explained-r-b
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <img src="images/neyo.png"
+                     alt="RnB"
+                     class="music-image">
+
+            </a>
+
+            <div class="music-info">
+
+                <a href="https://www.startle.io/blog/music-genres-explained-r-b"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-title">
+
+                    R & B
+
+                </a>
+
+                <p>
+                    (R&B) Rhythm and Blues, term used for several types of postwar African-American popular music, 
+                    as well as for some white rock music derived from it. 
+                    The term was coined by Jerry Wexler in 1947, when he was editing the charts at the trade journal Billboard and 
+                    found that the record companies issuing Black popular music considered the chart names 
+                    then in use (Harlem Hit Parade, Sepia, Race) to be demeaning.
+                </p>
+
+                <a href="https://en.wikipedia.org/wiki/Ne-Yo"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="music-link">
+
+                    Shot of Ne-Yo
+
+                </a>
+
+            </div>
+
+        </article>        
+
     </main>
+
+    </div>
+
+    <script>
+        const hero = document.getElementById('hero');
+        const root = document.documentElement;
+        let ticking = false;
+
+        function update() {
+            const progress = Math.min(window.scrollY / window.innerHeight, 1);
+            hero.style.opacity = 1 - progress;
+            hero.style.transform = `scale(${1 - progress * 0.1})`;
+            root.style.setProperty('--p', progress);   /* drives wave + title parallax */
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(update);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        update();
+    </script>
 
 </body>
 
